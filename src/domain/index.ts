@@ -1,5 +1,4 @@
 export * from './models'
-export * from './primitives'
 export * from './repositories'
 export * from './usecases'
 export * from './http'

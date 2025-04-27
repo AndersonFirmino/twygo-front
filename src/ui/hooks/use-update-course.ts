@@ -12,7 +12,7 @@ export const useUpdateCourse = () => {
     mutationFn: async (params: UpdateCourseUsecase.Params) => {
       return await updateCourseUsecase.execute(params)
     },
-    onSuccess: (data, variables) => {
+    onSuccess: (_data, variables) => {
       queryClient.invalidateQueries({ queryKey: ['courses'] })
       queryClient.invalidateQueries({ queryKey: ['course', variables.id] })
     },

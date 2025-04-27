@@ -4,4 +4,8 @@ export interface PageHeaderProps {
     label: string
     onClick: () => void
   }
+  secondaryButton?: {
+    label: string
+    onClick: () => void
+  }
 }

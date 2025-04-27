@@ -1,10 +1,12 @@
 import { useLocation } from 'react-router-dom'
 
-import { BreadcrumbItem, breadcrumbRoutes } from '@/ui/components'
+import { BreadcrumbItemProps, breadcrumbRoutes } from '@/ui/components'
 import { container, TYPES } from '@/ui/inversify'
 import { BreadcrumbGeneratorService } from '@/ui/services'
 
-export const useBreadcrumbs = (translations: Record<string, string> = breadcrumbRoutes): BreadcrumbItem[] | null => {
+export const useBreadcrumbs = (
+  translations: Record<string, string> = breadcrumbRoutes,
+): BreadcrumbItemProps[] | null => {
   const location = useLocation()
   const currentPath = location.pathname
   const breadcrumbGeneratorService = container.get<BreadcrumbGeneratorService>(TYPES.BreadcrumbGeneratorService)

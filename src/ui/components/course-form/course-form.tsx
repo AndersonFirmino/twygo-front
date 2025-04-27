@@ -89,7 +89,7 @@ const CourseForm: React.FC<CourseFormProps> = ({ initialData, onSubmit, isSubmit
           )}
         </div>
 
-        <Button mt={4} colorScheme="blue" variant="solid" type="submit" isLoading={isSubmitting} loadingText="Saving">
+        <Button mt={4} colorScheme="blue" variant="solid" type="submit" loading={isSubmitting} loadingText="Saving">
           {initialData ? 'Update Course' : 'Create Course'}
         </Button>
       </Stack>

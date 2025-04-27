@@ -1,5 +1,5 @@
-import { BreadcrumbItem } from '@/ui/components'
+import { BreadcrumbItemProps } from '@/ui/components'
 
 export interface IBreadcrumbGeneratorService {
-  generateBreadcrumbs(currentPath: string, translations: Record<string, string>): BreadcrumbItem[] | null
+  generateBreadcrumbs(currentPath: string, translations: Record<string, string>): BreadcrumbItemProps[] | null
 }

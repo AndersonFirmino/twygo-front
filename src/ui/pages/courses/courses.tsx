@@ -37,6 +37,10 @@ const Courses: React.FC = () => {
     <PageContainer>
       <PageHeader
         title="Courses"
+        secondaryButton={{
+          label: 'Dashboard',
+          onClick: () => navigate('/courses/dashboard'),
+        }}
         actionButton={{
           label: 'Create Course',
           onClick: () => navigate('/courses/create'),
