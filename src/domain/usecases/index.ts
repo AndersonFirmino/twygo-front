@@ -1,1 +1,1 @@
-export * from './get-courses'
+export * from './get-courses-usecase'
