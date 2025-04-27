@@ -1,6 +1,6 @@
 import { inject, injectable } from 'inversify'
 
-import { Course, CoursesRepository, type HttpClient } from '@/domain'
+import { Course, CoursesRepository, type HttpClient, VideosSizeReport } from '@/domain'
 import { InvalidCoursesResponseError } from '@/domain/errors/invalid-courses-response-error'
 import { TYPES } from '@/inversify'
 
@@ -46,8 +46,8 @@ export class CoursesRepositoryImpl implements CoursesRepository {
     await this.httpClient.delete<void>(`/courses/${id}`)
   }
 
-  async getTotalVideosSize(): Promise<{ total_size: number }> {
-    return await this.httpClient.get<{ total_size: number }>('/reports/videos_size')
+  async getTotalVideosSize(): Promise<VideosSizeReport> {
+    return this.httpClient.get<VideosSizeReport>('/reports/videos_size')
   }
 
   private validateResponseArray(data: Course[]) {
