@@ -11,15 +11,27 @@ Este projeto é um setup base para aplicações React com TypeScript e Vite, inc
 - [TypeScript](https://www.typescriptlang.org/)
 - [ESLint](https://eslint.org/) com regras opinativas
 - [Prettier](https://prettier.io/) com padronização obrigatória
+- [Docker](https://www.docker.com/) para containerização
+- [Docker Compose](https://docs.docker.com/compose/) para orquestração de containers
 
 ---
 
 ## 🚀 Scripts
 
+### PNPM
+
 ```bash
 pnpm dev           # roda a aplicação em modo desenvolvimento
 pnpm build         # builda o projeto para produção
 pnpm lint          # executa o lint com ESLint
+```
+
+### Docker
+
+```bash
+docker-compose up frontend-dev    # roda a aplicação em modo desenvolvimento
+docker-compose up frontend        # roda a aplicação em modo produção
+docker-compose build              # builda as imagens Docker
 ```
 
 ---
@@ -32,6 +44,52 @@ pnpm lint          # executa o lint com ESLint
 ```
 VITE_API_URL=http://localhost:3000  # URL da API do servidor
 ```
+
+---
+
+## 🐳 Docker
+
+Este projeto pode ser executado com Docker, facilitando a configuração do ambiente de desenvolvimento e implantação.
+
+### Pré-requisitos
+
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+
+### Executando com Docker
+
+#### Ambiente de Desenvolvimento
+
+```bash
+docker-compose up frontend-dev
+```
+
+Isso iniciará o servidor de desenvolvimento em `http://localhost:3333` com hot-reload ativado.
+
+#### Ambiente de Produção
+
+```bash
+docker-compose up frontend
+```
+
+Isso construirá a aplicação e a servirá em `http://localhost` usando Nginx.
+
+### Construindo a Imagem Docker
+
+Se você quiser apenas construir a imagem Docker sem executá-la:
+
+```bash
+docker build -t twygo-front .
+```
+
+### Configuração do Nginx
+
+O projeto inclui uma configuração personalizada do Nginx (`nginx.conf`) que:
+
+- Configura compressão Gzip para melhor performance
+- Define cache de longa duração para assets estáticos
+- Configura o redirecionamento correto para SPA (Single Page Application)
+- Define páginas de erro personalizadas
 
 ---
 
