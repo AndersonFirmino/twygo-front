@@ -24,6 +24,17 @@ pnpm lint          # executa o lint com ESLint
 
 ---
 
+## 🔧 Configuração do Ambiente
+
+1. Crie um arquivo `.env` na raiz do projeto baseado no arquivo `.env.example`
+2. Configure as variáveis de ambiente de acordo com seu ambiente de desenvolvimento:
+
+```
+VITE_API_URL=http://localhost:3000  # URL da API do servidor
+```
+
+---
+
 ## 🌎 Organização de Pastas
 
 ### `src/`

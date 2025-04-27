@@ -28,3 +28,6 @@ __screenshots__
 coverage
 .junie
 .aiignore
+
+# Environment variables
+.env

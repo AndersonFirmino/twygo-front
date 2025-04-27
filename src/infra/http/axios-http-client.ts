@@ -23,4 +23,19 @@ export class AxiosHttpClient implements HttpClient {
     const response = await this.axiosInstance.get<TResponse>(url, { signal })
     return response.data
   }
+
+  async post<TRequest, TResponse>(url: string, data: TRequest): Promise<TResponse> {
+    const response = await this.axiosInstance.post<TResponse>(url, data)
+    return response.data
+  }
+
+  async put<TRequest, TResponse>(url: string, data: TRequest): Promise<TResponse> {
+    const response = await this.axiosInstance.put<TResponse>(url, data)
+    return response.data
+  }
+
+  async delete<TResponse>(url: string): Promise<TResponse> {
+    const response = await this.axiosInstance.delete<TResponse>(url)
+    return response.data
+  }
 }

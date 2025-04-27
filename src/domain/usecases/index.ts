@@ -1,1 +1,6 @@
 export * from './get-courses-usecase'
+export * from './get-course-usecase'
+export * from './create-course-usecase'
+export * from './update-course-usecase'
+export * from './delete-course-usecase'
+export * from './get-total-videos-size-usecase'
